@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="continue1">Boshlash</string>
+    <string name="login">Kirish</string>
+    <string name="next">Keyingisi</string>
+    <string name="forgot_password">Parolni Unutdingizmi?</string>
+    <string name="info_pass1">Kamida 6 ta belgi</string>
+    <string name="info_pass2">Minimal 3 ta harf</string>
+    <string name="confirm_otp">Parolni tasdiqlash</string>
+    <string name="info_pass3">Kamida 3 ta raqam</string>
+    <string name="register_info">Agar siz allaqachon ro`yxatdan o`tgan bo`lsangiz,\nsiz shunchaki ilovaga kirishingiz mumkin</string>
+    <string name="info_pass4">Kamida bitta bosh harf</string>
+    <string name="password">Parol</string>
+    <string name="register">Ro`yhatdan o`tish</string>
+    <string name="auth_txt">Kirish</string>
+    <string name="rewrite_pass">Parolni qayta yozish</string>
+    <string name="welcome_txt">Ilovaga xush kelibsiz</string>
+    <string name="enter_code">Kodni yozing</string>
+    <string name="info_otp">Tasdiqlash kodingiz +998935990005 raqamiga yuborildi.</string>
+    <string name="time">Qoldi</string>
+    <string name="checkOtp">Tasdiqlash</string>
+    <string name="underlin_txt"><u>Bu yerni bosing..</u>.</string>
+    <string name="dont_have_code">Agar kod kelmasa,</string>
+
+
+</resources>

@@ -1,33 +1,39 @@
 package com.azamovhudstc.infinityinsurance.utils
 
+import android.app.Activity
 import android.app.Dialog
 import android.content.Context
 import android.content.res.Resources
 import android.graphics.Color
+import android.graphics.Paint
 import android.graphics.drawable.ColorDrawable
+import android.graphics.drawable.ShapeDrawable
+import android.graphics.drawable.shapes.RoundRectShape
 import android.os.SystemClock
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.DisplayMetrics
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.view.animation.AccelerateDecelerateInterpolator
 import android.view.animation.AnimationUtils
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
+import android.widget.FrameLayout
 import android.widget.Toast
 import androidx.appcompat.widget.AppCompatEditText
+import androidx.core.view.updateLayoutParams
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.interpolator.view.animation.FastOutSlowInInterpolator
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavOptions
-import com.azamovhudstc.epolisinsurance.R
-import com.azamovhudstc.epolisinsurance.app.App
-import com.azamovhudstc.epolisinsurance.tools.hasConnection
+import com.azamovhudstc.infinityinsurance.R
+import com.azamovhudstc.infinityinsurance.app.App
 import com.google.android.material.snackbar.Snackbar
-import kotlinx.android.synthetic.main.no_connection.view.*
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -46,6 +52,45 @@ fun View.expandView() {
         .start()
 }
 
+fun snackString(s: String?, activity: Activity? = null, clipboard: String? = null) {
+    if (s != null) {
+        (activity)?.apply {
+            runOnUiThread {
+                val snackBar = Snackbar.make(
+                    window.decorView.findViewById(android.R.id.content),
+                    s,
+                    Snackbar.LENGTH_LONG
+                )
+                snackBar.view.apply {
+                    updateLayoutParams<FrameLayout.LayoutParams> {
+                        gravity = (Gravity.CENTER_HORIZONTAL or Gravity.TOP)
+                        width = ViewGroup.LayoutParams.WRAP_CONTENT
+                    }
+                    translationY = (24f + 32f)
+                    translationZ = 32f
+                    val shapeDrawable = ShapeDrawable()
+                    shapeDrawable.paint.color =
+                        Color.parseColor("#9E120F0F") // Set the background color if needed
+                    shapeDrawable.paint.style = Paint.Style.FILL
+                    shapeDrawable.shape = RoundRectShape(
+                        floatArrayOf(120f, 120f, 120f, 120f, 120f, 120f, 120f, 120f),
+                        null,
+                        null
+                    )
+
+                    this.background = shapeDrawable
+                    setOnClickListener {
+                        snackBar.dismiss()
+                    }
+                    setOnLongClickListener {
+                        true
+                    }
+                }
+                snackBar.show()
+            }
+        }
+    }
+}
 
 fun EditText.phoneMask() {
     val textWatcher = object : TextWatcher {
@@ -82,30 +127,30 @@ fun EditText.requestFocus(length: Int, requestFocus: View) =
 fun EditText.requestFocusOpeningScreen() {
     requestFocus()
     val imm: InputMethodManager? =
-        App.instance.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager?
+        App.currentActivity()!!.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager?
     imm?.showSoftInput(this, InputMethodManager.SHOW_IMPLICIT)
 
 }
-
-fun View.setErrorSmall() {
-    setBackgroundResource(R.drawable.bg_ceria_error)
-}
-
-fun View.setError() {
-    setBackgroundResource(R.drawable.bg_error)
-}
-
-fun View.setDefault() {
-    setBackgroundResource(R.drawable.bg_nomer)
-}
-
-fun View.setDefaultBig() {
-    setBackgroundResource(R.drawable.bg_add_polis_edit)
-}
-
-fun View.setDefaultSmall() {
-    setBackgroundResource(R.drawable.bg_ceria)
-}
+//
+//fun View.setErrorSmall() {
+//    setBackgroundResource(R.drawable.bg_ceria_error)
+//}
+//
+//fun View.setError() {
+//    setBackgroundResource(R.drawable.bg_error)
+//}
+//
+//fun View.setDefault() {
+//    setBackgroundResource(R.drawable.bg_nomer)
+//}
+//
+//fun View.setDefaultBig() {
+//    setBackgroundResource(R.drawable.bg_add_polis_edit)
+//}
+//
+//fun View.setDefaultSmall() {
+//    setBackgroundResource(R.drawable.bg_ceria)
+//}
 
 fun View.slideTop(animTime: Long, startOffset: Long) {
     val slideUp = AnimationUtils.loadAnimation(App.instance, R.anim.slide_top).apply {
@@ -189,41 +234,41 @@ class SafeClickListener(
         onSafeCLick(v)
     }
 }
-
-fun showNetworkDialog(context: FragmentActivity, container: View?) {
-    val dialog = Dialog(context)
-    container?.gone()
-    val inflater = LayoutInflater.from(context)
-    var dialogView = inflater.inflate(R.layout.no_connection, null)
-    dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-    dialog.setCancelable(false)
-    dialogView.try_again.setOnClickListener {
-        dialogView.try_againtxt.gone()
-        dialogView.try_again_progress.visible()
-        context.lifecycleScope.launch {
-            delay(600)
-            if (hasConnection()) {
-                container?.visible()
-                dialog.dismiss()
-                dialogView.try_againtxt.visible()
-                dialogView.try_again_progress.gone()
-
-            } else {
-                container?.gone()
-                dialogView.try_againtxt.visible()
-                dialogView.try_again_progress.gone()
-                dialog.setContentView(dialogView)
-                dialog.show()
-            }
-        }
-
-    }
-    dialog.setContentView(dialogView)
-
-    dialog.show()
-
-
-}
+//
+//fun showNetworkDialog(context: FragmentActivity, container: View?) {
+//    val dialog = Dialog(context)
+//    container?.gone()
+//    val inflater = LayoutInflater.from(context)
+//    var dialogView = inflater.inflate(R.layout.no_connection, null)
+//    dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+//    dialog.setCancelable(false)
+//    dialogView.try_again.setOnClickListener {
+//        dialogView.try_againtxt.gone()
+//        dialogView.try_again_progress.visible()
+//        context.lifecycleScope.launch {
+//            delay(600)
+//            if (hasConnection()) {
+//                container?.visible()
+//                dialog.dismiss()
+//                dialogView.try_againtxt.visible()
+//                dialogView.try_again_progress.gone()
+//
+//            } else {
+//                container?.gone()
+//                dialogView.try_againtxt.visible()
+//                dialogView.try_again_progress.gone()
+//                dialog.setContentView(dialogView)
+//                dialog.show()
+//            }
+//        }
+//
+//    }
+//    dialog.setContentView(dialogView)
+//
+//    dialog.show()
+//
+//
+//}
 
 
 fun Fragment.showSnack(

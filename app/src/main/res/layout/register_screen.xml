@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
         android:fontFamily="@font/montserrat_semibold"
-        android:text="Регистрация"
+        android:text="@string/register"
         android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -98,7 +98,7 @@
             android:layout_height="match_parent"
             android:background="@drawable/bg_edit"
             android:paddingEnd="30dp"
-            android:hint="Пароль"
+            android:hint="@string/password"
             android:paddingStart="69dp"
             android:textColorHint="#A4A4A4"
             android:textSize="16sp" />
@@ -155,7 +155,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:text="Не менее 6 символов"
+                android:text="@string/info_pass1"
                 android:textColor="#BCC4CB"
                 android:textSize="15sp" />
         </LinearLayout>
@@ -179,7 +179,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:text="Минимум 3 буква"
+                android:text="@string/info_pass2"
                 android:textColor="#BCC4CB"
                 android:textSize="15sp" />
         </LinearLayout>
@@ -203,7 +203,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:text="Минимум 3 цифра"
+                android:text="@string/info_pass3"
                 android:textColor="#BCC4CB"
                 android:textSize="15sp" />
         </LinearLayout>
@@ -227,7 +227,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:text="Минимум одна заглавная буква"
+                android:text="@string/info_pass4"
                 android:textColor="#BCC4CB"
                 android:textSize="15sp" />
         </LinearLayout>
@@ -248,7 +248,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/bg_edit"
-            android:hint="Повторите пароль"
+            android:hint="@string/rewrite_pass"
             android:paddingStart="69dp"
             android:textColorHint="#A4A4A4"
             android:textSize="16sp" />
@@ -289,7 +289,7 @@
         android:insetRight="0dp"
         app:backgroundTint="@color/colorPrimary"
         android:fontFamily="@font/montserrat_semibold"
-        android:text="ДАЛЕЕ"
+        android:text="@string/continue1"
         android:clickable="false"
         android:textColor="@color/white"
         android:textSize="18sp"
@@ -305,8 +305,7 @@
         android:layout_marginHorizontal="25dp"
         android:layout_marginTop="20dp"
         android:gravity="center"
-        android:text="Если Вы уже зарегистрированы,\n
-то можете просто Войти в приложению"
+        android:text="@string/register_info"
         android:textColor="#A4A4A4"
         android:textSize="15dp"
 

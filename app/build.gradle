@@ -67,4 +67,19 @@ dependencies {
      * */
     implementation 'io.github.vicmikhailau:MaskedEditText:4.0.7'
 
+    /**
+     * Language With Fragment
+     **/
+    implementation 'com.zeugmasolutions.localehelper:locale-helper-android:1.5.1'
+    implementation 'com.github.prongbang:localization:2.1.2'
+
+    /**
+     * Glide
+     * */
+    implementation 'com.github.bumptech.glide:glide:4.15.1'
+    kapt 'com.github.bumptech.glide:compiler:4.15.1'
+    implementation 'com.github.bumptech.glide:okhttp3-integration:4.15.1'
+    implementation 'jp.wasabeef:glide-transformations:4.3.0'
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+
 }

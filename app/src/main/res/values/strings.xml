@@ -3,11 +3,29 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="_998" tools:ignore="MissingTranslation">+998-##-###-##-##</string>
     <string name="hello_blank_fragment" tools:ignore="MissingTranslation">Hello blank fragment</string>
-    <string name="continue1">Boshlash</string>
-    <string name="login">Kirish</string>
-    <string name="forgot_password">Parolni Unutdingizmi?</string>
 
-    <string name="password">Parol</string>
-    <string name="auth_txt">Kirish</string>
-    <string name="welcome_txt">Ilovaga xush kelibsiz</string>
+    <string name="register">Регистрация</string>
+
+    <string name="continue1">ПРОДОЛЖИТЬ</string>
+    <string name="login">ВОЙТИ</string>
+    <string name="confirm_otp">Подтверждения пароля</string>
+    <string name="welcome_txt">Добро пожаловать,\nв приложению</string>
+    <string name="auth_txt">Авторизация</string>
+    <string name="forgot_password">Забыли пароль?</string>
+    <string name="password">Пароль</string>
+    <string name="info_pass1">Не менее 6 символов</string>
+    <string name="info_pass2">Минимум 3 буква</string>
+    <string name="info_pass3">Минимум 3 цифра</string>
+    <string name="register_info">Если Вы уже зарегистрированы,\nто можете просто Войти в приложению</string>
+    <string name="info_pass4">Минимум одна заглавная буква</string>
+    <string name="rewrite_pass">Повторите пароль</string>
+    <string name="next">Далее</string>
+    <string name="enter_code">Напишите код</string>
+    <string name="info_otp">Ваш код-подтверждения отправлен на номеру +998935990005..</string>
+    <string name="time">Осталось</string>
+    <string name="checkOtp">ПОДТВЕРДИТЬ</string>
+    <string name="underlin_txt"><u>нажмите здесь..</u>.</string>
+    <string name="dont_have_code">Если код не прищел,</string>
+
+
 </resources>

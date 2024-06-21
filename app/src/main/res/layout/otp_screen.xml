@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.screen.auth.RegisterScreen">
+
+    <ProgressBar
+        android:id="@+id/verifyProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/small_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="60dp"
+        android:fontFamily="@font/montserrat_semibold"
+        android:text="@string/confirm_otp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+
+    <FrameLayout
+        android:id="@+id/editText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginTop="18dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5">
+
+
+        <EditText
+            android:id="@+id/verifySms"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_edit"
+
+            android:drawablePadding="10dp"
+            android:drawableTint="@color/black"
+            android:hint="@string/enter_code"
+            android:paddingStart="69dp"
+            android:textColorHint="@color/login_edit_color"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="13dp"
+                android:src="@drawable/login_start_menu" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="18dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="10dp"
+                android:background="@color/login_edit_color" />
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/senderPhoneTxt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="15dp"
+        android:gravity="start"
+        android:text="@string/info_otp"
+        android:textColor="#A4A4A4"
+
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/editText"
+        app:layout_constraintStart_toStartOf="@+id/editText"
+        app:layout_constraintTop_toBottomOf="@+id/editText" />
+
+    <TextView
+        android:id="@+id/don_tHaveCodeLeft"
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/textColor"
+        android:text="@string/dont_have_code"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@+id/senderPhoneTxt"
+        app:layout_constraintTop_toBottomOf="@id/senderPhoneTxt" />
+
+    <TextView
+        android:id="@+id/don_tHaveCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/urbanist_bold"
+        android:text="@string/underlin_txt"
+        android:textColor="@color/colorPrimary"
+        android:textSize="15sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/don_tHaveCodeLeft"
+        app:layout_constraintStart_toEndOf="@+id/don_tHaveCodeLeft"
+        app:layout_constraintTop_toTopOf="@+id/don_tHaveCodeLeft" />
+
+
+    <LinearLayout
+        android:id="@+id/container_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="5dp"
+        android:gravity="center"
+
+
+        android:orientation="vertical"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="@+id/senderPhoneTxt"
+        app:layout_constraintStart_toStartOf="@+id/senderPhoneTxt"
+        app:layout_constraintTop_toBottomOf="@+id/senderPhoneTxt">
+
+        <TextView
+
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="Осталось"
+            android:textColor="@color/black"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/time_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginStart="5dp"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="60.."
+            android:textColor="@color/black"
+            android:textSize="50sp" />
+
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/clickVerify"
+        android:layout_width="0dp"
+        android:layout_height="57dp"
+        android:layout_marginHorizontal="33dp"
+        android:layout_marginTop="45dp"
+        android:fontFamily="@font/montserrat_semibold"
+        android:insetLeft="0dp"
+        android:insetTop="0dp"
+        android:insetRight="0dp"
+        android:insetBottom="0dp"
+        android:text="@string/checkOtp"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:backgroundTint="@color/colorPrimary"
+        app:cornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/container_time" />
+
+    <TextView
+        android:id="@+id/openLoginTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginTop="25dp"
+        android:gravity="center"
+        android:text="@string/register_info"
+        android:textColor="#A4A4A4"
+        android:textSize="15dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/clickVerify" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
