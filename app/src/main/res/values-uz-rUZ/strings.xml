@@ -21,6 +21,7 @@
     <string name="checkOtp">Tasdiqlash</string>
     <string name="underlin_txt"><u>Bu yerni bosing..</u>.</string>
     <string name="dont_have_code">Agar kod kelmasa,</string>
+    <string name="success_verify">Roʻyxatdan oʻtish muvaffaqiyatli oʻtdi !</string>
 
 
 </resources>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_graph"
+    app:startDestination="@id/splashScreen">
+
+    <fragment
+        android:id="@+id/splashScreen"
+        android:name="com.azamovhudstc.infinityinsurance.ui.screen.splash.SplashScreen"
+        android:label="splash_screen"
+        tools:layout="@layout/splash_screen" >
+        <action
+            android:id="@+id/action_splashScreen_to_loginScreen"
+            app:destination="@id/loginScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerScreen"
+        android:name="com.azamovhudstc.infinityinsurance.ui.screen.auth.RegisterScreen"
+        android:label="RegisterScreen"
+        tools:layout="@layout/register_screen" />
+    <fragment
+        android:id="@+id/loginScreen"
+        android:name="com.azamovhudstc.infinityinsurance.ui.screen.auth.LoginScreen"
+        android:label="LoginScreen"
+        tools:layout="@layout/login_screen" />
+</navigation>

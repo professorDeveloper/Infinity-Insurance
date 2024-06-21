@@ -131,26 +131,6 @@ fun EditText.requestFocusOpeningScreen() {
     imm?.showSoftInput(this, InputMethodManager.SHOW_IMPLICIT)
 
 }
-//
-//fun View.setErrorSmall() {
-//    setBackgroundResource(R.drawable.bg_ceria_error)
-//}
-//
-//fun View.setError() {
-//    setBackgroundResource(R.drawable.bg_error)
-//}
-//
-//fun View.setDefault() {
-//    setBackgroundResource(R.drawable.bg_nomer)
-//}
-//
-//fun View.setDefaultBig() {
-//    setBackgroundResource(R.drawable.bg_add_polis_edit)
-//}
-//
-//fun View.setDefaultSmall() {
-//    setBackgroundResource(R.drawable.bg_ceria)
-//}
 
 fun View.slideTop(animTime: Long, startOffset: Long) {
     val slideUp = AnimationUtils.loadAnimation(App.instance, R.anim.slide_top).apply {

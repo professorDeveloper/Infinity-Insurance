@@ -26,6 +26,7 @@
     <string name="checkOtp">ПОДТВЕРДИТЬ</string>
     <string name="underlin_txt"><u>нажмите здесь..</u>.</string>
     <string name="dont_have_code">Если код не прищел,</string>
+    <string name="success_verify">Регистрация прощла успешно !</string>
 
 
 </resources>
