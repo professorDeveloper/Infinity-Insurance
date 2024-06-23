@@ -287,7 +287,7 @@
         android:insetLeft="0dp"
         app:cornerRadius="10dp"
         android:insetRight="0dp"
-        app:backgroundTint="@color/colorPrimary"
+        app:backgroundTint="@color/btn_select"
         android:fontFamily="@font/montserrat_semibold"
         android:text="@string/continue1"
         android:clickable="false"

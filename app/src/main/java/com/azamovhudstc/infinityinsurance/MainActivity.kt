@@ -3,8 +3,10 @@ package com.azamovhudstc.infinityinsurance
 import android.content.res.Configuration
 import android.os.Bundle
 import com.prongbang.localization.LocalizationAppCompatActivity
+import dagger.hilt.android.AndroidEntryPoint
 import java.util.*
 
+@AndroidEntryPoint
 class MainActivity : LocalizationAppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
